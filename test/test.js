@@ -1,8 +1,20 @@
 var assert = require("assert");
-import todo from "../dist/timing";
+import {AnimationTimer, IntervalTimer, TimeoutTimer} from "../dist/timing";
 
-describe("Package", function () {
+describe("AnimationTimer", function () {
   it("works", ()=>{
-    assert.equal(todo(), 42);
+    assert.ok(new AnimationTimer());
+  });
+});
+
+describe("IntervalTimer", function () {
+  it("works", ()=>{
+    assert.ok(new IntervalTimer());
+  });
+});
+
+describe("TimeoutTimer", function () {
+  it("works", ()=>{
+    assert.ok(new TimeoutTimer());
   });
 });
