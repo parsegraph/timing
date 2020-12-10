@@ -1,7 +1,7 @@
 {
   "name": "parsegraph-timing",
   "version": "1.4.0",
-  "description": "TODO-DESCRIPTION",
+  "description": "Timer utilities",
   "main": "dist/timing.js",
   "scripts": {
     "coverage": "nyc npm run test",

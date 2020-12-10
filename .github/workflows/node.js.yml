@@ -25,7 +25,7 @@ jobs:
     - run: |
         mkdir parsegraph-timing
         cp -r -t parsegraph-timing package.json package-lock.json README.md demo/ LICENSE dist/
-        tar cvzf parsegraph-timing.tar.gz parsegraph-TODO-PACKAGE-NAME/
+        tar cvzf parsegraph-timing.tar.gz parsegraph-timing/
     - uses: actions/upload-artifact@v2
       with:
         name: parsegraph-timing-${{ github.run_number }}
