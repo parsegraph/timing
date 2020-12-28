@@ -1,13 +1,18 @@
-const START_TIME = new Date();
+import AnimationTimer from './AnimationTimer';
+import IntervalTimer from './IntervalTimer';
+import TimeoutTimer from './TimeoutTimer';
+import getTimeInMillis from 'parsegraph-gettimeinmillis';
 
-export function timediffMs(a, b) {
+export function timediffMs(a:Date, b:Date):number {
   return b.getTime() - a.getTime();
 }
-export function elapsed(startTime, ct) {
+
+export function elapsed(startTime:Date, ct?:Date):number {
   ct = ct || new Date();
   return ct.getTime() - startTime.getTime();
 }
-export function later(cb, cbThisArg) {
+
+export function later(cb:Function, cbThisArg?:any):Function {
   let t = setTimeout(function() {
     cb.call(cbThisArg);
   }, 0);
@@ -18,7 +23,10 @@ export function later(cb, cbThisArg) {
     }
   };
 }
-export function timeout(name, timeoutMs, ...args) {
+
+export const TIMEOUT = 30*1000;
+
+export function timeout(name:string, timeoutMs:number, ...args:Array<any>):Function {
   if (args.length === 1) {
     if (typeof args[0] === 'number') {
       name = null;
@@ -46,4 +54,10 @@ export function timeout(name, timeoutMs, ...args) {
     throw new Error('Timeout after ' + timeoutMs + 'msecs exceeded.');
   };
 }
+
+export {
+  AnimationTimer,
+  IntervalTimer,
+  TimeoutTimer
+};
 
