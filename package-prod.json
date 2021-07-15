@@ -1,0 +1,17 @@
+{
+    "name": "parsegraph-timing",
+    "version": "1.4.4",
+    "description": "timing",
+    "main": "dist/parsegraph-timing.js",
+    "types": "dist/parsegraph-timing.d.ts",
+    "repository": {
+      "type": "git",
+      "url": "git+ssh://git@github.com/parsegraph/timing.git"
+    },
+    "author": "Rainback, Inc.",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/parsegraph/timing/issues"
+    },
+    "homepage": "https://github.com/parsegraph/timing#readme"
+  }
