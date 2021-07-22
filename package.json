@@ -1,6 +1,6 @@
 {
   "name": "parsegraph-timing",
-  "version": "1.4.4-dev",
+  "version": "1.4.5-dev",
   "description": "Timer utilities",
   "main": "dist/parsegraph-timing.js",
   "types": "dist/parsegraph-timing.d.ts",
@@ -72,9 +72,9 @@
     "express": "^4.17.1",
     "glslify-loader": "^2.0.0",
     "openssl": "^1.1.0",
-    "parsegraph-gettimeinmillis": "^1.4.1",
-    "parsegraph-method": "^1.4.5",
-    "parsegraph-testsuite": "^1.4.1",
+    "parsegraph-gettimeinmillis": "^1.4.3",
+    "parsegraph-method": "^1.4.7",
+    "parsegraph-testsuite": "^1.4.3",
     "raw-loader": "^4.0.1",
     "ts-mocha": "^8.0.0",
     "webgl-mock": "^0.1.7"
