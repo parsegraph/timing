@@ -1,6 +1,6 @@
 {
     "name": "parsegraph-timing",
-    "version": "1.4.5",
+    "version": "1.4.6",
     "description": "timing",
     "main": "dist/parsegraph-timing.js",
     "types": "dist/parsegraph-timing.d.ts",
@@ -13,5 +13,9 @@
     "bugs": {
       "url": "https://github.com/parsegraph/timing/issues"
     },
-    "homepage": "https://github.com/parsegraph/timing#readme"
+    "homepage": "https://github.com/parsegraph/timing#readme",
+    "dependencies": {
+      "parsegraph-gettimeinmillis": "^1.4.3",
+      "parsegraph-method": "^1.4.7"
+    }
   }
