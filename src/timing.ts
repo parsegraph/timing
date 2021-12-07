@@ -1,22 +1,22 @@
-import AnimationTimer from './AnimationTimer';
-import IntervalTimer from './IntervalTimer';
-import TimeoutTimer from './TimeoutTimer';
-import getTimeInMillis from 'parsegraph-gettimeinmillis';
+import AnimationTimer from "./AnimationTimer";
+import IntervalTimer from "./IntervalTimer";
+import TimeoutTimer from "./TimeoutTimer";
+import getTimeInMillis from "parsegraph-gettimeinmillis";
 
-export function timediffMs(a:Date, b:Date):number {
+export function timediffMs(a: Date, b: Date): number {
   return b.getTime() - a.getTime();
 }
 
-export function elapsed(startTime:Date, ct?:Date):number {
+export function elapsed(startTime: Date, ct?: Date): number {
   ct = ct || new Date();
   return ct.getTime() - startTime.getTime();
 }
 
-export function later(cb:Function, cbThisArg?:any):Function {
-  let t = setTimeout(function() {
+export function later(cb: Function, cbThisArg?: any): Function {
+  let t = setTimeout(function () {
     cb.call(cbThisArg);
   }, 0);
-  return function() {
+  return function () {
     if (t) {
       clearTimeout(t);
       t = null;
@@ -24,11 +24,15 @@ export function later(cb:Function, cbThisArg?:any):Function {
   };
 }
 
-export const TIMEOUT = 30*1000;
+export const TIMEOUT = 30 * 1000;
 
-export function timeout(name:string, timeoutMs:number, ...args:Array<any>):Function {
+export function timeout(
+  name: string,
+  timeoutMs: number,
+  ...args: Array<any>
+): Function {
   if (args.length === 1) {
-    if (typeof args[0] === 'number') {
+    if (typeof args[0] === "number") {
       name = null;
       timeoutMs = args[0];
     } else {
@@ -39,7 +43,7 @@ export function timeout(name:string, timeoutMs:number, ...args:Array<any>):Funct
     timeoutMs = TIMEOUT;
   }
   const startTime = getTimeInMillis();
-  return function() {
+  return function () {
     if (getTimeInMillis() - startTime <= timeoutMs) {
       // Not timed out yet.
       return;
@@ -48,16 +52,11 @@ export function timeout(name:string, timeoutMs:number, ...args:Array<any>):Funct
     // Report the timeout.
     if (name) {
       throw new Error(
-          'Timeout \'' + name + '\' after ' + timeoutMs + 'msecs exceeded.',
+        "Timeout '" + name + "' after " + timeoutMs + "msecs exceeded."
       );
     }
-    throw new Error('Timeout after ' + timeoutMs + 'msecs exceeded.');
+    throw new Error("Timeout after " + timeoutMs + "msecs exceeded.");
   };
 }
 
-export {
-  AnimationTimer,
-  IntervalTimer,
-  TimeoutTimer
-};
-
+export { AnimationTimer, IntervalTimer, TimeoutTimer };

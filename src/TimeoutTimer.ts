@@ -1,10 +1,10 @@
-import Method from 'parsegraph-method';
+import Method from "parsegraph-method";
 
 export default class TimeoutTimer {
-  _delay:number;
-  timerId:any;
-  fire:Function;
-  listener:Method;
+  _delay: number;
+  timerId: any;
+  fire: Function;
+  listener: Method;
 
   constructor() {
     this._delay = 0;
@@ -14,7 +14,7 @@ export default class TimeoutTimer {
     /**
      * Forwards event arguments to the listener.
      */
-    this.fire = (...args:any):any=>{
+    this.fire = (...args: any): any => {
       this.timerId = null;
       if (this.listener) {
         return this.listener.apply(args);
@@ -22,13 +22,13 @@ export default class TimeoutTimer {
     };
   }
 
-  setDelay(ms:number):void {
+  setDelay(ms: number): void {
     this._delay = ms;
-  };
+  }
 
-  delay():number {
+  delay(): number {
     return this._delay;
-  };
+  }
 
   schedule() {
     if (this.timerId) {
@@ -36,9 +36,9 @@ export default class TimeoutTimer {
     }
 
     this.timerId = window.setTimeout(this.fire, this.delay());
-  };
+  }
 
-  setListener(listener:Function, thisArg?:any):void {
+  setListener(listener: Function, thisArg?: any): void {
     if (!listener) {
       this.listener = null;
       return;
@@ -47,13 +47,13 @@ export default class TimeoutTimer {
       thisArg = this;
     }
     this.listener = new Method(listener, thisArg);
-  };
+  }
 
-  scheduled():boolean {
+  scheduled(): boolean {
     return !!this.timerId;
-  };
+  }
 
-  isScheduled():boolean {
+  isScheduled(): boolean {
     return this.scheduled();
   }
 
@@ -63,4 +63,4 @@ export default class TimeoutTimer {
       this.timerId = null;
     }
   }
-};
+}

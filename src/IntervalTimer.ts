@@ -1,10 +1,10 @@
-import Method from 'parsegraph-method';
+import Method from "parsegraph-method";
 
 export default class IntervalTimer {
-  _delay:number;
-  timerId:any;
-  listener:Method;
-  fire:Function;
+  _delay: number;
+  timerId: any;
+  listener: Method;
+  fire: Function;
 
   constructor() {
     this._delay = 0;
@@ -15,7 +15,7 @@ export default class IntervalTimer {
      * Forwards event arguments to the listener.
      */
     const that = this;
-    this.fire = function(...args:any) {
+    this.fire = function (...args: any) {
       if (that.listener) {
         return that.listener.apply(args);
       }
@@ -25,16 +25,16 @@ export default class IntervalTimer {
   /**
    * Sets the delay, in milliseconds.
    */
-  setDelay(ms:number):void {
+  setDelay(ms: number): void {
     this._delay = ms;
-  };
+  }
 
   /**
    * Gets the delay, in milliseconds.
    */
-  delay():number {
+  delay(): number {
     return this._delay;
-  };
+  }
 
   schedule() {
     if (this.timerId) {
@@ -42,17 +42,17 @@ export default class IntervalTimer {
     }
 
     this.timerId = window.setInterval(this.fire, this.delay());
-  };
+  }
 
-  scheduled():boolean {
+  scheduled(): boolean {
     return !!this.timerId;
-  };
+  }
 
-  isScheduled():boolean {
+  isScheduled(): boolean {
     return this.isScheduled();
   }
 
-  setListener(listener:Function, thisArg?:any):void {
+  setListener(listener: Function, thisArg?: any): void {
     if (!listener) {
       this.listener = null;
       return;
@@ -61,12 +61,12 @@ export default class IntervalTimer {
       thisArg = this;
     }
     this.listener = new Method(listener, thisArg);
-  };
+  }
 
   cancel() {
     if (this.timerId) {
       window.clearInterval(this.timerId);
       this.timerId = null;
     }
-  };
+  }
 }

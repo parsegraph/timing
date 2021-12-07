@@ -3,19 +3,15 @@ DIST_NAME = timing
 SCRIPT_FILES = \
 	src/timing.ts
 
-DECLARATION_FILES = \
-	dist/$(DIST_NAME).d.ts \
-	dist/$(DIST_NAME).d.ts.map
-
 all: build lint test coverage esdoc
 
-build: dist/parsegraph-$(DIST_NAME).js $(DECLARATION_FILES)
+build: dist/parsegraph-$(DIST_NAME).js
 .PHONY: build
 
 build-prod: dist-prod/parsegraph-$(DIST_NAME).js
 .PHONY: build-prod
 
-demo: dist/$(DIST_NAME).js $(DECLARATION_FILES)
+demo: dist/$(DIST_NAME).js
 	npm run demo
 .PHONY: demo
 

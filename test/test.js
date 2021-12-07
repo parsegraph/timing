@@ -1,20 +1,20 @@
 var assert = require("assert");
-import {AnimationTimer, IntervalTimer, TimeoutTimer} from "../dist/timing";
+import { AnimationTimer, IntervalTimer, TimeoutTimer } from "../dist/timing";
 
 describe("AnimationTimer", function () {
-  it("works", ()=>{
+  it("works", () => {
     assert.ok(new AnimationTimer());
   });
 });
 
 describe("IntervalTimer", function () {
-  it("works", ()=>{
+  it("works", () => {
     assert.ok(new IntervalTimer());
   });
 });
 
 describe("TimeoutTimer", function () {
-  it("works", ()=>{
+  it("works", () => {
     assert.ok(new TimeoutTimer());
   });
 });

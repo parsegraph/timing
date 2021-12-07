@@ -1,27 +1,27 @@
-import Method from 'parsegraph-method';
+import Method from "parsegraph-method";
 
 export default class AnimationTimer {
-  timerId:any;
-  fire:FrameRequestCallback;
-  listener:Method;
+  timerId: any;
+  fire: FrameRequestCallback;
+  listener: Method;
 
   constructor() {
     this.timerId = null;
 
-    this.fire = (...args:any):any=>{
+    this.fire = (...args: any): any => {
       this.timerId = null;
       if (this.listener) {
         try {
           return this.listener.apply(args);
         } catch (ex) {
           console.log(ex);
-          alert('Error during timer: ' + ex);
+          alert("Error during timer: " + ex);
         }
       }
     };
   }
 
-  schedule():boolean {
+  schedule(): boolean {
     // Do nothing if the timer is already scheduled.
     if (this.timerId) {
       return false;
@@ -32,20 +32,20 @@ export default class AnimationTimer {
     return true;
   }
 
-  setListener(listener:Function, thisArg?:any):void {
+  setListener(listener: Function, thisArg?: any): void {
     if (!listener) {
       this.listener = null;
       return;
     }
 
     this.listener = new Method(listener, thisArg);
-  };
+  }
 
-  scheduled():boolean {
+  scheduled(): boolean {
     return !!this.timerId;
   }
 
-  isScheduled():boolean {
+  isScheduled(): boolean {
     return this.scheduled();
   }
 
@@ -56,5 +56,5 @@ export default class AnimationTimer {
 
     cancelAnimationFrame(this.timerId);
     this.timerId = null;
-  };
+  }
 }
