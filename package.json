@@ -1,6 +1,6 @@
 {
   "name": "parsegraph-timing",
-  "version": "1.4.7-dev",
+  "version": "1.4.8-dev",
   "description": "Timer utilities",
   "main": "dist/parsegraph-timing.js",
   "types": "dist/parsegraph-timing.d.ts",
