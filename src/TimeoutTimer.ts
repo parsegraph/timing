@@ -13,6 +13,10 @@ export default class TimeoutTimer {
 
     /**
      * Forwards event arguments to the listener.
+     *
+     * @param {any} ...args The arguments to pass to the listener once fired
+     *
+     * @return {any} the value returned by the listener, or undefined if there is no listener
      */
     this.fire = (...args: any): any => {
       this.timerId = null;

@@ -24,6 +24,8 @@ export default class IntervalTimer {
 
   /**
    * Sets the delay, in milliseconds.
+   *
+   * @param {number} ms the new delay, in millisecond
    */
   setDelay(ms: number): void {
     this._delay = ms;
@@ -31,6 +33,8 @@ export default class IntervalTimer {
 
   /**
    * Gets the delay, in milliseconds.
+   *
+   * @return {number} the delay in milliseconds
    */
   delay(): number {
     return this._delay;
