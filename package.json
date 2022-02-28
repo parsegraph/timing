@@ -15,7 +15,6 @@
   },
   "homepage": "https://github.com/parsegraph/timing#readme",
   "dependencies": {
-    "esdoc-typescript-plugin": "^1.0.1",
     "parsegraph-gettimeinmillis": "^1.4.3",
     "parsegraph-method": "^1.4.9"
   },
