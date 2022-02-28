@@ -3891,12 +3891,12 @@ parse5@6.0.1:
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-6.0.1.tgz#e1a1c085c569b3dc08321184f19a39cc27f7c30b"
   integrity sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==
 
-parsegraph-gettimeinmillis@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/parsegraph-gettimeinmillis/-/parsegraph-gettimeinmillis-1.4.3.tgz#888152b73c425f1ffca860b16a68af7691399d12"
-  integrity sha512-qon9TkxxwEVy1U4rRBya91aqoOPKctvBUIGF6t5sB0itQZENKjbHaJzv1Vl7+qHUCGp10KiQmJ9MAvfkMMXfUA==
+parsegraph-gettimeinmillis@^1.4.5:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/parsegraph-gettimeinmillis/-/parsegraph-gettimeinmillis-1.4.5.tgz#b2bb3c8351b4fa827a3e4a4f404336b2f3366493"
+  integrity sha512-J53sQzXiHZB/lenyB8Ep45aF2MoX46TPpY9lvkurl3PtxTNKoOH68Pjcn+zYEUpQh61gY/T21WvKaSmHD3YoGw==
 
-parsegraph-method@^1.4.9:
+parsegraph-method@^1.4.20:
   version "1.4.20"
   resolved "https://registry.yarnpkg.com/parsegraph-method/-/parsegraph-method-1.4.20.tgz#89097ebded9abab1691365c059fcfd48a0682213"
   integrity sha512-LFqTsUhgN1k6UOBMvbPNL8vBMWeWfP1bBFqcEFbA6iNxt5X7q6XsaOCUAAAB0lf87Wt7rX9Go1HA2PrdO8P7mQ==
