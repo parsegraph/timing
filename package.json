@@ -15,8 +15,8 @@
   },
   "homepage": "https://github.com/parsegraph/timing#readme",
   "dependencies": {
-    "parsegraph-gettimeinmillis": "^1.4.8",
-    "parsegraph-method": "^1.4.24"
+    "parsegraph-gettimeinmillis": "^1.4.9",
+    "parsegraph-method": "^1.4.25"
   },
   "devDependencies": {
     "@babel/cli": "^7.20.7",
